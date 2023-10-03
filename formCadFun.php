@@ -76,10 +76,10 @@
 					<div class="input-field">
 				
 						<i class="material-icons prefix ">email</i>
-						<label for="telefone"></label>
-						<input type="tel" name="telefone" placeholder="(+55)99999-9999" required>
+						<label for="telefone:"></label>
+						<input type="tel" name="telefone" placeholder="(99)9999-9999" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{5})-([0-9]{4})" title="Número de telefone precisa ser no formato (99)9999-9999"   required>
 					</div>
-
+					<!-- pattern="[0-9]{7}-[0-9]{4}" -->
 				
 					<p class="right-align">
 						<button class="waves-effect waves-light btn #ffab00 amber accent-4" type="submit"><i class="material-icons right">send</i> Cadastrar </button>
