@@ -14,9 +14,7 @@ $sql = "INSERT INTO funcionario (nome, cpf, cargo, telefone) VALUES ('$nome', $c
 $resultado = mysqli_query($conexao, $sql);
 
 if ($resultado == true) {
-    header("Location: consultar.php?result=alert");
-} else {
-    header("Location: consultar.php?result=false");
-}
+    header("Location: consultarFun.php?result=alert");
+} 
 
 ?>
