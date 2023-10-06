@@ -22,7 +22,7 @@
 
 	.topicos{
 		font-family: "Roboto", sans-serif;
-		font-size: 18px;
+		font-size: 17px;
 		margin-left: 46px;
 		font-weight: 500;
 	}
