@@ -59,41 +59,31 @@
 				<form method="POST" action="cadFuncionario.php">
                     <p class="topicos">Nome do Item:</p>
 					<div class="input-field">
-						<i class="material-icons prefix">perm_identity</i>
+						<i class="material-icons prefix">fiber_manual_record</i>
 						<label for="name"> </label>
 						<input type="text" name="nomeItem" required>
 					</div>
 
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
-						<i class="material-icons prefix ">email</i>
+						<i class="material-icons prefix ">fiber_manual_record</i>
 						<label for="cpf"></label>
 						<input type="text" name="descricao" required>
 					</div>
 					
 					<p class="topicos">Almoxarifado:</p>
           			<div class="input-field">
-						<i class="material-icons prefix">person_pin</i>
+						<i class="material-icons prefix">fiber_manual_record</i>
 						<label for="cargo"></label>
 						<input type="text" name="cargo" required>
 					</div>
 
-					<p class="topicos">Telefone:</p>
-					<div class="input-field">
-				
-						<i class="material-icons prefix ">email</i>
-						<label for="telefone:"></label>
-						<input type="tel" name="telefone"   required>
-						</div>
 				
 				
-
-
-	
               </div>
 			  <br>
 			  		<p class="right-align">
-						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i> Cadastrar </button>
+						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i>Cadastrar</button>
 					</p>
 
 			  </form>
