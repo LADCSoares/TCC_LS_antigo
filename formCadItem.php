@@ -22,7 +22,7 @@
 
 	.topicos{
 		font-family: "Roboto", sans-serif;
-		font-size: 18px;
+		font-size: 17px;
 		margin-left: 46px;
 		font-weight: 500;
 	}
@@ -56,7 +56,7 @@
 			<div class="container ">
 			<br>
 			<div class="col s10 offset-s1">
-				<form method="POST" action="cadFuncionario.php">
+				<form method="POST" action="cadItem.php">
                     <p class="topicos">Nome do Item:</p>
 					<div class="input-field">
 						<i class="material-icons prefix">fiber_manual_record</i>
@@ -67,21 +67,23 @@
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
 						<i class="material-icons prefix ">fiber_manual_record</i>
-						<label for="cpf"></label>
+						<label for="descrição"></label>
 						<input type="text" name="descricao" required>
 					</div>
 					
-					<p class="topicos">Almoxarifado:</p>
-          			<div class="input-field">
-						<i class="material-icons prefix">fiber_manual_record</i>
-						<label for="cargo"></label>
-						<input type="text" name="cargo" required>
+					<p class="topicos">Almoxarifado de Destino do Item:</p>
+					<div class="input-field">
+					<i class="material-icons prefix left-align">fiber_manual_record</i>
+					<select name="almoxarifado" >
+ 				     <option value="" disabled selected required>Escolha o Almoxarifado</option>
+ 				     <option value="1" >1 - Almoxarifado Geral</option>
+ 				     <option value="2" >2 - Almoxarifado Pedagógico</option>
+ 				   </select>
+					<label></label>
 					</div>
-
-				
-				
               </div>
-			  <br>
+
+			  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br<br><br>
 			  		<p class="right-align">
 						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i>Cadastrar</button>
 					</p>
@@ -103,12 +105,16 @@
        			 <?php
        			 if (isset($_GET['result'])) {
        			   if ($_GET['result'] == true) {
-       			     echo "M.toast({html: 'O funcionário foi salvo com sucesso!'})";
+       			     echo "M.toast({html: 'O item foi salvo com sucesso!'})";
        			   } else {
-       			     echo "M.toast({html: 'Erro ao salvar o funcionário!'})";
+       			     echo "M.toast({html: 'Erro ao salvar o item!'})";
        			   }
        			 } ?>
     		  	});
+
+				  $(document).ready(function(){
+    			  $('select').formSelect();
+  				});
         </script>
 </body>
 </html>
