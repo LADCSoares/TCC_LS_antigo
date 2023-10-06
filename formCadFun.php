@@ -26,6 +26,12 @@
 		margin-left: 46px;
 		font-weight: 500;
 	}
+	.topicos2{
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		margin-left: 46px;
+		font-weight: 600;
+	}
 	</style>
 </head>
 <body>
@@ -38,7 +44,7 @@
 
     ?>
 
-
+<br><br>
 	<div class="row">
 	
 		<div class="container z-depth-3 col s6 offset-s4 cont1">
@@ -77,16 +83,21 @@
 				
 						<i class="material-icons prefix ">email</i>
 						<label for="telefone:"></label>
-						<input type="tel" name="telefone" placeholder="(99)9999-9999" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{5})-([0-9]{4})" title="Número de telefone precisa ser no formato (99)9999-9999"   required>
-					</div>
+						<input type="tel" name="telefone"   required>
+						</div>
+						<!-- placeholder="(99)9999-9999" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{5})-([0-9]{4})" title="Número de telefone precisa ser no formato (99)9999-9999"  -->
 					<!-- pattern="[0-9]{7}-[0-9]{4}" -->
 				
-					<p class="right-align">
-						<button class="waves-effect waves-light btn #ffab00 amber accent-4" type="submit"><i class="material-icons right">send</i> Cadastrar </button>
+
+
+	
+              </div>
+			  <br>
+			  		<p class="right-align">
+						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i> Cadastrar </button>
 					</p>
 
-				</form>
-              </div>
+			  </form>
 			</div>
 		</div>
 	</div>
