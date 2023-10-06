@@ -23,10 +23,12 @@
   
         .topicos{
           font-family: "Roboto", sans-serif;
-          font-size: 18px;
+          font-size: 16px;
           margin-left: 46px;
-          font-weight: 500;
         }
+        .topo2{
+          background-color: rgb(8,83,148);
+      }
 	      </style>
   </head>
   
@@ -37,13 +39,16 @@
       require_once "conecta.php";
   
         ?>
-      
-      <main class="container">
-        <h1> Funcionários </h1>
-  
-      
-    <table class="bordered highlight responsive-table">
-            <thead>
+      <div class="row">
+      <main class="container col s9 offset-s3 ">
+        <br><br>
+      <div class="cont1 col s3 offset-s0">
+        <h3 class=" center-align white-text"> Funcionários </h3>
+      </div>
+   <br><br><br><br><br><br>
+    
+    <table class="bordered highlight striped responsive-table topicos">
+            <thead class="">
               <tr>
                   <th>ID</th>
                   <th>Nome</th>
@@ -52,6 +57,7 @@
                   <th>Telefone</th>
                 
               </tr>
+              
             </thead>
             <tbody>
     
@@ -78,26 +84,22 @@
           echo "<td>" . $cargo . "</td>";
           echo "<td>" . $telefone . "</td>";
         
-          echo "<td>  <a href= 'formAtualFun.php?idFuncionario=$id' class='btn-floating waves-effect waves-light  '> <i class='material-icons'>mode_edit</i></a> </td>";
-          echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light#ffb300 amber darken-1 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
+          echo "<td>  <a href= 'formAtualFun.php?idFuncionario=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
+          echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light light-blue darken-4 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
   
           echo "</tr>";
         } 
   
         ?>
+        
         </tbody>
         </table>
         <br>
-  
-  
-        
-        <a href='formCadFun.php' class="waves-effect  waves-light btn yellow black-text topicos"><i class="material-icons right">add</i>Atualizar </a>
-  
+
         </main>
-        <br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
       <br><br>
-            <!-- <?php require_once "pe.php"?>  -->
+      
   
       <!-- Modal Trigger -->
       <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
