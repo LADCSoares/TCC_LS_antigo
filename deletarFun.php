@@ -11,5 +11,5 @@ $sql = "DELETE FROM funcionario where idFuncionario=$id";
 $resultado = mysqli_query($conexao, $sql);
 
 // arrumar o deletar
-header("Location: consultar.php");
+header("Location: consultarFun.php");
 ?>
