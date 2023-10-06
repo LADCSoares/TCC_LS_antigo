@@ -107,8 +107,19 @@
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type="text/javascript">
+           $(document).ready(function() {
+        	$('.dropdown-trigger').dropdown();
+       			 <?php
+       			 if (isset($_GET['result'])) {
+       			   if ($_GET['result'] == true) {
+       			     echo "M.toast({html: 'O funcionário foi salvo com sucesso!'})";
+       			   } else {
+       			     echo "M.toast({html: 'Erro ao salvar o funcionário!'})";
+       			   }
+       			 } ?>
+    		  	});
+        </script>
 </body>
 </html>
