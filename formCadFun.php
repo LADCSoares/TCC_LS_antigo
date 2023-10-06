@@ -16,7 +16,7 @@
 	<title>SCAEM</title>
 	<style>
     .cont1{
-		font-family: "Roboto", sans-serif;
+		font-family: "Lilita One", sans-serif;
 		background-color: rgb(8,83,148);
 	}
 
@@ -32,6 +32,7 @@
 		margin-left: 46px;
 		font-weight: 600;
 	}
+	
 	</style>
 </head>
 <body>
@@ -48,7 +49,7 @@
 	<div class="row">
 	
 		<div class="container z-depth-3 col s6 offset-s4 cont1">
-		<h4 class="center-align white-text"> Cadastrar Funcionário </h4>
+		<h4 class="center-align white-text"> CADASTRAR FUNCIONÁRIO </h4>
 		</div>
 		
 		<div class="col s8 offset-s3">
