@@ -66,14 +66,6 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
 
-
-    <!-- <form action="atualizar.php" method="POST"> -->
-        <!-- Informe o id: <input type ="text" name="id"/> <br> -->
-        <!-- <input type="hidden" name="id" value="<?php echo $linha['id']; ?>"> -->
-        <!-- Nome: <input type="text" name="nome" value="<?php echo $linha['nome']; ?>"> <br> -->
-        <!-- email: <input type="text" name="email" value="<?php echo $linha['email']; ?>"> <br> -->
-        <!-- privilegio: <input type="number" name="privilegio" value="<?php echo $linha['privilegio']; ?>"> <br> -->
-        <!-- <input type="submit" value="atualizar"> -->
 </form>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
