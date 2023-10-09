@@ -28,7 +28,10 @@
         .topo2{
           background-color: rgb(8,83,148);
       }
-	      </style>
+        .borda{
+          border-radius: 3%;
+         }
+	       </style>
   </head>
   
         <body>
@@ -41,8 +44,8 @@
       <div class="row">
       <main class="container col s9 offset-s3 ">
         <br><br>
-      <div class="cont1 col s3 offset-s0">
-        <h3 class=" center-align white-text"> Funcionários </h3>
+      <div class="cont1 col s5 offset-s0">
+        <h3 class="borda center-align white-text"> Almoxarifado Geral </h3>
       </div>
    <br><br><br><br><br><br>
     
