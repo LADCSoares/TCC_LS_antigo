@@ -28,7 +28,10 @@
         .topo2{
           background-color: rgb(8,83,148);
       }
-	      </style>
+        .borda{
+          border-radius: 3%;
+         }
+	       </style>
   </head>
   
         <body>
@@ -41,8 +44,8 @@
       <div class="row">
       <main class="container col s9 offset-s3 ">
         <br><br>
-      <div class="cont1 col s3 offset-s0">
-        <h3 class=" center-align white-text"> Funcionários </h3>
+      <div class="cont1 col s5 offset-s0">
+        <h3 class="borda center-align white-text"> Almoxarifado Pedagógico </h3>
       </div>
    <br><br><br><br><br><br>
     
@@ -50,10 +53,8 @@
             <thead class="">
               <tr>
                   <th>ID</th>
-                  <th>Nome</th>
-                  <th>CPF</th>
-                  <th>Cargo</th>
-                  <th>Telefone</th>
+                  <th>Item</th>
+                  <th>Descrição</th>
                 
               </tr>
               
@@ -62,31 +63,32 @@
     
     <?php
     
-      $sql = "SELECT idFuncionario,nome,cpf,cargo,telefone FROM funcionario";
+      $sql = "SELECT idItem,tipo,descricao,almoxarifado FROM item";
       $resultado = mysqli_query($conexao,$sql); 
     // var_dump($resultado);
     //  $dados = mysqli_fetch_assoc($resultado);
   
     while($linha = mysqli_fetch_assoc($resultado))
+        if($linha['almoxarifado'] == 2){
+
         { 
           echo "<tr>";
-          $id = $linha['idFuncionario'];
-          $nome = $linha['nome'];
-          $cpf = $linha['cpf']; 
-          $cargo = $linha['cargo'];
-          $telefone = $linha['telefone'];
+          $id = $linha['idItem'];
+          $tipo = $linha['tipo'];
+          $descricao = $linha['descricao']; 
+
         
           echo "<tr>";
-          echo "<td>" . $id. "</td>";
-          echo "<td>" . $nome . "</td>";
-          echo "<td>" . $cpf . "</td>";
-          echo "<td>" . $cargo . "</td>";
-          echo "<td>" . $telefone . "</td>";
+          echo "<td>" . $id . "</td>";
+          echo "<td>" . $tipo . "</td>";
+          echo "<td>" . $descricao . "</td>";
         
-          echo "<td>  <a href= 'formAtualFun.php?idFuncionario=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
+          echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
+          echo "<td>  <a href= 'formAtualItem.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
           echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light light-blue darken-4 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
   
           echo "</tr>";
+        }
         } 
   
         ?>
@@ -106,8 +108,8 @@
       <!-- Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4>Excluir funcionário</h4>
-          <p>Tem certeza que deseja excluir o funcionário?</p>
+          <h4>Excluir Item</h4>
+          <p>Tem certeza que deseja excluir o Item?</p>
         </div>
         <div class="modal-footer center">
           <a href="" id="btn-sim" class="modal-close waves-effect waves-green btn-flat">Sim</a>
@@ -138,7 +140,7 @@
   
         function preencheId(id) {
           let btnSim = document.getElementById("btn-sim");
-          btnSim.href = "deletarFun.php?idFuncionario=" + id;
+          btnSim.href = "deletarItem.php?idItem=" + id;
         }
         </script>
   
