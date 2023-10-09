@@ -11,5 +11,10 @@ $sql = "DELETE FROM item where idItem = $id";
 $resultado = mysqli_query($conexao, $sql);
 
 // arrumar o deletar
-header("Location: consultar.php");
+if ($resultado == true) {
+   header("Location: consultarGeral.php");
+} else {
+   header("Location: consultarPeda.php");
+}
+
 ?>
