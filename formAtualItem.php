@@ -13,7 +13,7 @@
    include "conecta.php";
    include "topo.html";
 
-   $id = $_GET['idFuncionario'];
+   $id = $_GET['idItem'];
    $sql = "SELECT * FROM item WHERE idItem=$id";
    $resultado = mysqli_query($conexao, $sql);
    $linha = mysqli_fetch_array($resultado);
