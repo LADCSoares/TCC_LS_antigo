@@ -69,7 +69,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix ">email</i>
 						<label for="cpf"></label>
-						<input type="number" name="cpf" required>
+						<input type="text" name="cpf" required>
 					</div>
 					
 					<p class="topicos">Cargo:</p>
