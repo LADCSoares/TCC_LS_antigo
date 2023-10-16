@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<title>Formulario de Contacto</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+        <!--Import Google Icon Font-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>SCAEM</title>
+	<style>
+    .cont1{
+		font-family: "Lilita One", sans-serif;
+		background-color: rgb(8,83,148);
+	}
+
+	.topicos{
+		font-family: "Roboto", sans-serif;
+		font-size: 17px;
+		margin-left: 46px;
+		font-weight: 500;
+	}
+	.topicos2{
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		margin-left: 46px;
+		font-weight: 600;
+	}
+	
+	</style>
 </head>
 <body>
   
@@ -19,55 +48,81 @@
    $linha = mysqli_fetch_array($resultado);
    mysqli_close($conexao);
     ?>
-    <br><br><br>
+    <br><br>
+	<div class="row">
+	
+	<div class="container z-depth-3 col s6 offset-s4 cont1">
+	<h4 class="center-align white-text"> ATUALIZAR INFORMAÇÕES FUNCIONÁRIO </h4>
+	</div>
+	
+	<div class="col s8 offset-s3">
 
-<section class="container">
-		<div class="row">
-		<h3 class="center-align">  Atualizar </h3>
-			<article class="col s6 offset-s3">
-				<form method="POST" action="atualizarFun.php">
-                    
-                <input type="hidden" name="idFuncionario" value="<?php echo $linha['idFuncionario']?>">
-					
-                    <div class="input-field">
-						<i class="material-icons prefix">perm_identity</i>
-						<label for="nombre">Nome </label>
-						<input type="text" name="nome" value="<?php echo $linha['nome']; ?>" required>
-					</div>
+		<div class="container ">
+		<br>
+		<div class="col s10 offset-s1">
+			<form method="POST" action="atualizarFun.php">
 
-					<div class="input-field">
-						<i class="material-icons prefix ">email</i>
-						<label for="email">cpf</label>
-						<input type="text" name="cpf" value="<?php echo $linha['cpf']; ?>" required>
-					</div>
+			<input type="hidden" name="idFuncionario" value="<?php echo $linha['idFuncionario']?>">
 
-          <div class="input-field">
-						<i class="material-icons prefix">person_pin</i>
-						<label for="apellido">cargo</label>
-						<input type="text" name="cargo"  value="<?php echo $linha['cargo']; ?>" required>
-					</div>
+				<p class="topicos">Nome:</p>
+				<div class="input-field">
+					<i class="material-icons prefix">perm_identity</i>
+					<label for="name"> </label>
+					<input type="text" name="nome" value="<?php echo $linha['nome']; ?>" required>
+				</div>
 
-          <div class="input-field">
-						<i class="material-icons prefix">person_pin</i>
-						<label for="apellido">Telefone</label>
-						<input type="number" name="telefone"  value="<?php echo $linha['telefone']; ?>" required>
-					</div>
-
+				<p class="topicos">CPF:</p>
+				<div class="input-field">
+					<i class="material-icons prefix ">email</i>
+					<label for="cpf"></label>
+					<input type="text" name="cpf" value="<?php echo $linha['cpf']; ?>" required>
+				</div>
 				
-					<p class="center-align">
-						<button class="waves-effect waves-light btn #ffab00 amber accent-4" type="submit"><i class="material-icons right">send</i> Atualizar </button>
-					</p>
+				<p class="topicos">Cargo:</p>
+				  <div class="input-field">
+					<i class="material-icons prefix">person_pin</i>
+					<label for="cargo"></label>
+					<input type="text" name="cargo"  value="<?php echo $linha['cargo']; ?>" required>
+				</div>
 
-				</form>
+				<p class="topicos">Telefone:</p>
+				<div class="input-field">
+			
+					<i class="material-icons prefix ">email</i>
+					<label for="telefone:"></label>
+					<input type="number" name="telefone"  value="<?php echo $linha['telefone']; ?>" required>
+					</div>
 
-			</article>
+
+
+
+		  </div>
+		  <br>
+				  <p class="right-align">
+					<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left"></i> Atualizar </button>
+				</p>
+
+		  </form>
 		</div>
-	</section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  
+	</div>
+</div>
+
 
 </form>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	<script type="text/javascript">
+           $(document).ready(function() {
+        	$('.dropdown-trigger').dropdown();
+       			 <?php
+       			 if (isset($_GET['result'])) {
+       			   if ($_GET['result'] == true) {
+       			     echo "M.toast({html: 'O funcionário foi atualizado com sucesso!'})";
+       			   } else {
+       			     echo "M.toast({html: 'Erro ao atualizar o funcionário!'})";
+       			   }
+       			 } ?>
+    		  	});
+        </script>
 </body>
 </html>
