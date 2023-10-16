@@ -14,8 +14,8 @@ $telefone = $_POST["telefone"];
 $sql = "UPDATE funcionario SET nome = '$nome', cpf = '$cpf', cargo = '$cargo', telefone = '$telefone' WHERE idFuncionario =  $id";
 $resultado = mysqli_query($conexao, $sql);
 if ($resultado == true) {
-    header("Location: consultar.php?result=true");
+    header("Location: consultarFun.php?result=true");
 } else {
-    header("Location: consultar.php?result=false");
+    header("Location: consultarFun.php?result=false");
 }
 
