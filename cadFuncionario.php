@@ -8,13 +8,14 @@ $cpf = $_POST["cpf"];
 $cargo = $_POST["cargo"];
 $telefone = $_POST["telefone"];
 // var_dump($telefone);
-// $id_Item = "";
 
-$sql = "INSERT INTO funcionario (nome, cpf, cargo, telefone) VALUES ('$nome', $cpf, '$cargo', $telefone)"; // pede para inserir em tal tabela no banco
+$sql = "INSERT INTO funcionario (nome, cpf, cargo, telefone) VALUES ('$nome', '$cpf' , '$cargo', '$telefone')"; // pede para inserir em tal tabela no banco
 $resultado = mysqli_query($conexao, $sql);
 
 if ($resultado == true) {
     header("Location: consultarFun.php?result=alert");
-} 
+}else{
+    header("Location: formCadFun.php?result=alert");
+}
 
 ?>
