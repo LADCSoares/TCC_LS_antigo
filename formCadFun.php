@@ -58,23 +58,24 @@
 			<br>
 			<div class="col s10 offset-s1">
 				<form method="POST" action="cadFuncionario.php">
+
                     <p class="topicos">Nome:</p>
 					<div class="input-field">
-						<i class="material-icons prefix">perm_identity</i>
+						<i class="material-icons prefix"></i>
 						<label for="name"> </label>
 						<input type="text" name="nome" required>
 					</div>
 
 					<p class="topicos">CPF:</p>
-					<div class="input-field">
-						<i class="material-icons prefix ">email</i>
+          			<div class="input-field">
+						<i class="material-icons prefix"></i>
 						<label for="cpf"></label>
 						<input type="text" name="cpf" required>
 					</div>
 					
 					<p class="topicos">Cargo:</p>
           			<div class="input-field">
-						<i class="material-icons prefix">person_pin</i>
+						<i class="material-icons prefix"></i>
 						<label for="cargo"></label>
 						<input type="text" name="cargo" required>
 					</div>
@@ -82,7 +83,7 @@
 					<p class="topicos">Telefone:</p>
 					<div class="input-field">
 				
-						<i class="material-icons prefix ">email</i>
+						<i class="material-icons prefix "></i>
 						<label for="telefone:"></label>
 						<input type="tel" name="telefone"   required>
 						</div>
@@ -115,9 +116,7 @@
        			 <?php
        			 if (isset($_GET['result'])) {
        			   if ($_GET['result'] == true) {
-       			     echo "M.toast({html: 'O funcionário foi salvo com sucesso!'})";
-       			   } else {
-       			     echo "M.toast({html: 'Erro ao salvar o funcionário!'})";
+       			     echo "M.toast({html: 'Erro ao salvar o funcionário!', classes: 'rounded'})";
        			   }
        			 } ?>
     		  	});
