@@ -43,7 +43,7 @@
   
         ?>
       <div class="row">
-      <main class="container col s9 offset-s3 ">
+      <main class="container col s8 offset-s3 ">
         <br><br>
       <div class="cont1 borda col s3 offset-s0">
         <h3 class=" center-align white-text"> Funcionários </h3>
@@ -133,9 +133,9 @@
           <?php
             if (isset($_GET['result'])) {
               if ($_GET['result'] == true) {
-                echo "M.toast({html: 'Funcionário salvo com sucesso!'})";
-              } else {
-                echo "M.toast({html: 'Erro ao salvar o funcionário!'})";
+                echo "M.toast({html: 'Funcionário salvo com sucesso!', classes: 'rounded'})";
+              }else {
+                echo "M.toast({html: 'Erro ao salvar o funcionário!', classes: 'rounded'})";
               }
             }?>
           });
