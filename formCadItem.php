@@ -102,12 +102,11 @@
 	<script type="text/javascript">
            $(document).ready(function() {
         	$('.dropdown-trigger').dropdown();
+
        			 <?php
        			 if (isset($_GET['result'])) {
        			   if ($_GET['result'] == true) {
-       			     echo "M.toast({html: 'O item foi salvo com sucesso!'})";
-       			   } else {
-       			     echo "M.toast({html: 'Erro ao salvar o item!'})";
+       			     echo "M.toast({html: 'Erro ao salvar o Item!', classes: 'rounded'})";
        			   }
        			 } ?>
     		  	});
