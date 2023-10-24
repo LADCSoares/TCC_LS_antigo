@@ -128,12 +128,12 @@
         $(document).ready(function(){
         $('.modal').modal();
         $('.dropdown-trigger').dropdown();
-          <?php
+        <?php
             if (isset($_GET['result'])) {
               if ($_GET['result'] == true) {
-                echo "M.toast({html: 'Funcionário salvo com sucesso!'})";
-              } else {
-                echo "M.toast({html: 'Erro ao salvar o funcionário!'})";
+                echo "M.toast({html: 'Item salvo com sucesso!', classes: 'rounded'})";
+              }else {
+                echo "M.toast({html: 'Erro ao salvar o Item!', classes: 'rounded'})";
               }
             }?>
           });
