@@ -66,21 +66,21 @@
 
 				<p class="topicos">Nome:</p>
 				<div class="input-field">
-					<i class="material-icons prefix">perm_identity</i>
+					<i class="material-icons prefix"></i>
 					<label for="name"> </label>
 					<input type="text" name="nome" value="<?php echo $linha['nome']; ?>" required>
 				</div>
 
 				<p class="topicos">CPF:</p>
 				<div class="input-field">
-					<i class="material-icons prefix ">email</i>
+					<i class="material-icons prefix "></i>
 					<label for="cpf"></label>
-					<input type="text" name="cpf" value="<?php echo $linha['cpf']; ?>" required>
+					<input type="text"  name="cpf" value="<?php echo $linha['cpf']; ?>" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"  title="O CPF precisa estar neste formato xxx.xxx.xxx-xx"  maxlength="14"  required>
 				</div>
 				
 				<p class="topicos">Cargo:</p>
 				  <div class="input-field">
-					<i class="material-icons prefix">person_pin</i>
+					<i class="material-icons prefix"></i>
 					<label for="cargo"></label>
 					<input type="text" name="cargo"  value="<?php echo $linha['cargo']; ?>" required>
 				</div>
@@ -88,9 +88,9 @@
 				<p class="topicos">Telefone:</p>
 				<div class="input-field">
 			
-					<i class="material-icons prefix ">email</i>
+					<i class="material-icons prefix "></i>
 					<label for="telefone:"></label>
-					<input type="number" name="telefone"  value="<?php echo $linha['telefone']; ?>" required>
+					<input type="tel"  name="telefone"  value="<?php echo $linha['telefone']; ?>" id="telefone"  placeholder="(DDD)xxxx-xxxx" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{4})-([0-9]{4})"  title="O número de telefone precisa estar neste formato (DDD)xxxx-xxxx"  maxlength="14"  required>
 					</div>
 
 
