@@ -59,21 +59,21 @@
 				<form method="POST" action="cadItem.php">
                     <p class="topicos">Nome do Item:</p>
 					<div class="input-field">
-						<i class="material-icons prefix">fiber_manual_record</i>
+						<i class="material-icons prefix"></i>
 						<label for="name"> </label>
 						<input type="text" name="nomeItem" required>
 					</div>
 
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
-						<i class="material-icons prefix ">fiber_manual_record</i>
+						<i class="material-icons prefix "></i>
 						<label for="descrição"></label>
 						<input type="text" name="descricao" required>
 					</div>
 					
 					<p class="topicos">Almoxarifado de Destino do Item:</p>
 					<div class="input-field">
-					<i class="material-icons prefix left-align">fiber_manual_record</i>
+					<i class="material-icons prefix left-align"></i>
 					<select name="almoxarifado" >
  				     <option value="" disabled selected required>Escolha o Almoxarifado</option>
  				     <option value="1" >1 - Almoxarifado Geral</option>
