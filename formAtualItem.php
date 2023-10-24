@@ -1,69 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<title>Formulario de Contacto</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+        <!--Import Google Icon Font-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>SCAEM</title>
+	<style>
+    .cont1{
+		font-family: "Lilita One", sans-serif;
+		background-color: rgb(8,83,148);
+	}
+
+	.topicos{
+		font-family: "Roboto", sans-serif;
+		font-size: 17px;
+		margin-left: 46px;
+		font-weight: 500;
+	}
+	.topicos2{
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		margin-left: 46px;
+		font-weight: 600;
+	}
+	</style>
 </head>
 <body>
-  
-    <?php
-//    require_once "cabeca.php";
-   include "conecta.php";
-   include "topo.html";
 
-   $id = $_GET['idItem'];
-   $sql = "SELECT * FROM item WHERE idItem=$id";
-   $resultado = mysqli_query($conexao, $sql);
-   $linha = mysqli_fetch_array($resultado);
-   mysqli_close($conexao);
+<?php 
+   
+//   require_once "cabeca.php";
+  require_once "conecta.php";
+  require_once "topo.html"
+
     ?>
-    <br><br><br>
 
-<section class="container">
-<div class="row">
+<br><br>
+	<div class="row">
 	
-    <div class="container z-depth-3 col s6 offset-s4 cont1">
-    <h4 class="center-align white-text"> Cadastrar Item </h4>
-    </div>
-    
-    <div class="col s8 offset-s3">
+		<div class="container z-depth-3 col s6 offset-s4 cont1">
+		<h4 class="center-align white-text"> CADASTRAR ITEM </h4>
+		</div>
+		
+		<div class="col s8 offset-s3">
 
-        <div class="container ">
-        <br>
-        <div class="col s10 offset-s1">
-            <form method="POST" action="cadFuncionario.php">
-                <p class="topicos">Item:</p>
-                <div class="input-field">
-                    <i class="material-icons prefix">perm_identity</i>
-                    <label for="name"> </label>
-                    <input type="text" name="tipo" required>
-                </div>
+			<div class="container ">
+			<br>
+			<div class="col s10 offset-s1">
+				<form method="POST" action="cadItem.php">
+                    <p class="topicos">Nome do Item:</p>
+					<div class="input-field">
+						<i class="material-icons prefix"></i>
+						<label for="name"> </label>
+						<input type="text" name="nomeItem" required>
+					</div>
 
-                <p class="topicos">Descrição:</p>
-                <div class="input-field">
-                    <i class="material-icons prefix ">email</i>
-                    <label for="cpf"></label>
-                    <input type="text" name="descricao" required>
-                </div>
-            
-            
-                <p class="right-align">
-                    <button class="waves-effect waves-light btn #ffab00 amber accent-4" type="submit"><i class="material-icons right">send</i> Cadastrar </button>
-                </p>
+					<p class="topicos">Descrição:</p>
+					<div class="input-field">
+						<i class="material-icons prefix "></i>
+						<label for="descrição"></label>
+						<input type="text" name="descricao" required>
+					</div>
+					
+					<p class="topicos">Almoxarifado de Destino do Item:</p>
+					<div class="input-field">
+					<i class="material-icons prefix left-align"></i>
+					<select name="almoxarifado" >
+ 				     <option value="" disabled selected required>Escolha o Almoxarifado</option>
+ 				     <option value="1" >1 - Almoxarifado Geral</option>
+ 				     <option value="2" >2 - Almoxarifado Pedagógico</option>
+ 				   </select>
+					<label></label>
+					</div>
+              </div>
 
-            </form>
-          </div>
-        </div>
-    </div>
-</div>
-	</section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  
+			  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br<br><br>
+			  		<p class="right-align">
+						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i>Cadastrar</button>
+					</p>
 
-</form>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+			  </form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type="text/javascript">
+           $(document).ready(function() {
+        	$('.dropdown-trigger').dropdown();
+
+       			 <?php
+       			 if (isset($_GET['result'])) {
+       			   if ($_GET['result'] == true) {
+       			     echo "M.toast({html: 'Erro ao salvar o Item!', classes: 'rounded'})";
+       			   }
+       			 } ?>
+    		  	});
+
+				  $(document).ready(function(){
+    			  $('select').formSelect();
+  				});
+        </script>
 </body>
 </html>
