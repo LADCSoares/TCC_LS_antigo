@@ -40,7 +40,7 @@
    
 //   require_once "cabeca.php";
   require_once "conecta.php";
-  require_once "topo.html"
+  require_once "topo.html";
 
     ?>
 
