@@ -12,10 +12,19 @@ $almoxarifado = $_POST["almoxarifado"];
 $sql = "INSERT INTO item (tipo, descricao, almoxarifado) VALUES ('$tipo', '$descricao', '$almoxarifado')"; // pede para inserir em tal tabela no banco
 $resultado = mysqli_query($conexao, $sql);
 
-// if ($resultado == true) {
-//     header("Location: consultar.php?result=alert");
-// } else {
-//     header("Location: consultar.php?result=false");
-// }
+if($almoxarifado == 1){
+    if ($resultado == true) {
+        header("Location: consultarGeral.php?result=alert");
+    } else {
+        header("Location: formCadItem.php?result=false");
+    }
+}else{
+    if ($resultado == true) {
+        header("Location: consultarPeda.php?result=alert");
+    } else {
+        header("Location: formCadItem.php?result=false");
+    }
+}
+
 
 ?>
