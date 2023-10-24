@@ -15,7 +15,7 @@ $resultado = mysqli_query($conexao, $sql);
 if ($resultado == true) {
     header("Location: consultarFun.php?result=alert");
 }else{
-    header("Location: formCadFun.php?result=alert");
+    header("Location: formCadFun.php?result=false");
 }
 
 ?>
