@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 22-Out-2023 às 20:17
--- Versão do servidor: 10.4.19-MariaDB
--- versão do PHP: 8.0.7
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 24-Out-2023 às 19:03
+-- Versão do servidor: 8.0.31
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,15 +27,19 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `estoque`
 --
 
-CREATE TABLE `estoque` (
-  `idEstoque` int(11) NOT NULL,
+DROP TABLE IF EXISTS `estoque`;
+CREATE TABLE IF NOT EXISTS `estoque` (
+  `idEstoque` int NOT NULL AUTO_INCREMENT,
   `dataRetirada` date NOT NULL,
   `dataEntrada` date NOT NULL,
-  `quantidade` int(11) NOT NULL,
+  `quantidade` int NOT NULL,
   `finalidadeRetirada` text NOT NULL,
-  `idItem` int(11) NOT NULL,
-  `IdFuncionario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idItem` int NOT NULL,
+  `IdFuncionario` int NOT NULL,
+  PRIMARY KEY (`idEstoque`),
+  KEY `IdFuncionario` (`IdFuncionario`),
+  KEY `idItem` (`idItem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -43,13 +47,15 @@ CREATE TABLE `estoque` (
 -- Estrutura da tabela `funcionario`
 --
 
-CREATE TABLE `funcionario` (
-  `idFuncionario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `funcionario`;
+CREATE TABLE IF NOT EXISTS `funcionario` (
+  `idFuncionario` int NOT NULL AUTO_INCREMENT,
   `nome` text NOT NULL,
-  `cpf` varchar(11) NOT NULL,
+  `cpf` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `cargo` varchar(300) NOT NULL,
-  `telefone` varchar(14) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `telefone` varchar(14) NOT NULL,
+  PRIMARY KEY (`idFuncionario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -57,12 +63,14 @@ CREATE TABLE `funcionario` (
 -- Estrutura da tabela `item`
 --
 
-CREATE TABLE `item` (
-  `idItem` int(11) NOT NULL,
+DROP TABLE IF EXISTS `item`;
+CREATE TABLE IF NOT EXISTS `item` (
+  `idItem` int NOT NULL AUTO_INCREMENT,
   `tipo` text NOT NULL,
   `descricao` text NOT NULL,
-  `almoxarifado` varchar(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `almoxarifado` varchar(1) NOT NULL,
+  PRIMARY KEY (`idItem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -70,70 +78,14 @@ CREATE TABLE `item` (
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idUsuario` int NOT NULL AUTO_INCREMENT,
   `escola` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `estoque`
---
-ALTER TABLE `estoque`
-  ADD PRIMARY KEY (`idEstoque`),
-  ADD KEY `IdFuncionario` (`IdFuncionario`),
-  ADD KEY `idItem` (`idItem`);
-
---
--- Índices para tabela `funcionario`
---
-ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`idFuncionario`);
-
---
--- Índices para tabela `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`idItem`);
-
---
--- Índices para tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `estoque`
---
-ALTER TABLE `estoque`
-  MODIFY `idEstoque` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `funcionario`
---
-ALTER TABLE `funcionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `item`
---
-ALTER TABLE `item`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`idUsuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Restrições para despejos de tabelas
