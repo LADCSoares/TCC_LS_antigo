@@ -63,7 +63,7 @@
     
     <?php
     
-      $sql = "SELECT idItem,tipo,descricao,almoxarifado FROM item";
+      $sql = "SELECT idItem,nomeItem,descricao,almoxarifado FROM item";
       $resultado = mysqli_query($conexao,$sql); 
     // var_dump($resultado);
     //  $dados = mysqli_fetch_assoc($resultado);
@@ -74,13 +74,13 @@
         { 
           echo "<tr>";
           $id = $linha['idItem'];
-          $tipo = $linha['tipo'];
+          $nomeItem = $linha['nomeItem'];
           $descricao = $linha['descricao']; 
 
         
           echo "<tr>";
           echo "<td>" . $id . "</td>";
-          echo "<td>" . $tipo . "</td>";
+          echo "<td>" . $nomeItem . "</td>";
           echo "<td>" . $descricao . "</td>";
         
           echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
