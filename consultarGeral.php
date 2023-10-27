@@ -55,6 +55,9 @@
                   <th>ID</th>
                   <th>Item</th>
                   <th>Descrição</th>
+                  <th>Estoque</th>
+                  <th>Editar</th>
+                  <th>Excluir</th>
                 
               </tr>
               
