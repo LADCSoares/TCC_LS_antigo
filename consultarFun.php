@@ -58,6 +58,8 @@
                   <th>CPF</th>
                   <th>Cargo</th>
                   <th>Telefone</th>
+                  <th>Editar</th>
+                  <th>Excluir</th>
                 
               </tr>
               
