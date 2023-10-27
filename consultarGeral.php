@@ -86,7 +86,7 @@
           echo "<td>" . $nomeItem . "</td>";
           echo "<td>" . $descricao . "</td>";
         
-          echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
+          echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>add</i></a> </td>";
           echo "<td>  <a href= 'formAtualItem.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
           echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light light-blue darken-4 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
   
