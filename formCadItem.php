@@ -74,8 +74,8 @@
 					<p class="topicos">Almoxarifado de Destino do Item:</p>
 					<div class="input-field">
 					<i class="material-icons prefix left-align"></i>
-					<select name="almoxarifado" >
- 				     <option value="" disabled selected required>Escolha o Almoxarifado</option>
+					<select name="almoxarifado" required >
+ 				     <option value="" disabled selected >Escolha o Almoxarifado</option>
  				     <option value="1" >1 - Almoxarifado Geral</option>
  				     <option value="2" >2 - Almoxarifado Pedagógico</option>
  				   </select>
