@@ -69,21 +69,21 @@
 					<div class="input-field">
 						<i class="material-icons prefix"></i>
 						<label for="name"> </label>
-						<input type="text" name="nomeItem" value="<?php echo $linha['tipo']; ?>" required>
+						<input type="text" name="nomeItem" value="<?php echo $linha['nomeItem']; ?>" required>
 					</div>
 
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
 						<i class="material-icons prefix "></i>
 						<label for="descrição"></label>
-						<input type="text" name="descricao" value="<?php echo $linha['descricao']; ?> required>
+						<input type="text" name="descricao" value="<?php echo $linha['descricao']; ?>" required>
 					</div>
 					
 					<p class="topicos">Almoxarifado de Destino do Item:</p>
 					<div class="input-field">
 					<i class="material-icons prefix left-align"></i>
-					<select name="almoxarifado" >
- 				     <option value="" disabled selected required>Escolha o Almoxarifado</option>
+					<select name="almoxarifado" required >
+					<option value="<?php echo $linha['almoxarifado']; ?>"><?php echo $linha['almoxarifado']; ?> - Almoxarifado Atual</option>
  				     <option value="1" >1 - Almoxarifado Geral</option>
  				     <option value="2" >2 - Almoxarifado Pedagógico</option>
  				   </select>
@@ -93,7 +93,7 @@
 
 			  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br<br><br>
 			  		<p class="right-align">
-						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i>Cadastrar</button>
+						<button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left"></i>Atualizar</button>
 					</p>
 
 			  </form>
@@ -114,8 +114,10 @@
        			 <?php
        			 if (isset($_GET['result'])) {
        			   if ($_GET['result'] == true) {
-       			     echo "M.toast({html: 'Erro ao salvar o Item!', classes: 'rounded'})";
-       			   }
+					echo "M.toast({html: 'O item foi atualizado com sucesso!'})";
+					} else {
+				  	echo "M.toast({html: 'Erro ao atualizar o item!'})";
+				}
        			 } ?>
     		  	});
 
