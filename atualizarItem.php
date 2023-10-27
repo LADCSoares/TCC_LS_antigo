@@ -2,7 +2,8 @@
 include("conecta.php");
 // faz conexao com o banco
 
-$tipo = $_POST["nomeItem"];
+$id = $_POST["idItem"];
+$nomeItem = $_POST["nomeItem"];
 $descricao = $_POST["descricao"];
 $almoxarifado = $_POST["almoxarifado"];
 // var_dump($cpf);
@@ -10,7 +11,7 @@ $almoxarifado = $_POST["almoxarifado"];
 // var_dump($telefone);
 // $id_Item = "";
 
-$sql = "UPDATE funcionario SET tipo = '$tipo', descricao = '$descricao', almoxarifado = '$almoxarifado' WHERE idItem =  $id";
+$sql = "UPDATE item SET nomeItem = '$nomeItem', descricao = '$descricao', almoxarifado = '$almoxarifado' WHERE idItem =  $id";
 $resultado = mysqli_query($conexao, $sql);
 
 if($almoxarifado == 1){
