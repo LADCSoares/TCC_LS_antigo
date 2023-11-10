@@ -3,7 +3,7 @@
             <head>
             <meta charset="UTF-8">
                     <!--Import Google Icon Font-->
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto">
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto|Rowdies">
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
                     <!--Import materialize.css-->
                     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
@@ -30,6 +30,9 @@
                 }
                 .topicos{
                     font-family: "Roboto", sans-serif;
+                    text-transform: capitalize;
+                    font-weight: 800;
+                    font-size: 22px;
                 }
                 </style>
 
@@ -43,12 +46,18 @@
             require_once "topo.html";
             
             $id= $_GET['idItem'];
-            $sql = "SELECT * FROM item WHERE idItem=$id";
+            $item = "SELECT * FROM item WHERE idItem=$id";
+
             $estoque = "SELECT * FROM item WHERE idItem=$id";
-            $resultado = mysqli_query($conexao, $sql);
+
+            $resultado1 = mysqli_query($conexao, $item);
+
             $resultado2 = mysqli_query($conexao, $estoque);
-            $linha = mysqli_fetch_array($resultado);
-            $controle = mysqli_fetch_array($resultado1);
+
+            $linha = mysqli_fetch_array($resultado1);
+
+            $controle = mysqli_fetch_array($resultado2);
+
             mysqli_close($conexao);
 
             ?>
@@ -68,47 +77,19 @@
             <div id="entrada" class="col s12">
             <br><br><br>
                     <div class="row">
-                    <div class="container z-depth-3 col s6 offset-s4 cont1">
+                    <div class="container z-depth-3 col s7 offset-s3 cont1">
                     <h4 class="center-align white-text"> ENTRADA </h4>
                     </div>
                     
-                    <div class="col s8 offset-s3">
+                    <div class="col s9 offset-s2">
 
                         <div class="container ">
                         <br>
                         <div class="col s10 offset-s1">
                             <form method="POST" action="cadEntrada.php">
 
-                                <p class="topicos">Nome:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="name"> </label>
-                                    <input type="text" name="nome" required>
-                                </div>
-
-                                <p class="topicos">CPF:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="cpf"></label>
-                                    <input type="text"  name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"  title="O CPF precisa estar neste formato xxx.xxx.xxx-xx"  maxlength="14"  required>
-                                </div>	
-
-                                <!-- oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" -->
-                                
-                                <p class="topicos">Cargo:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="cargo"></label>
-                                    <input type="text" name="cargo" required>
-                                </div>
-
-                                <p class="topicos">Telefone:</p>
-                                <div class="input-field">
-                            
-                                    <i class="material-icons prefix "></i>
-                                    <label for="telefone:"></label>
-                                    <input type="tel"  name="telefone" id="telefone"  placeholder="(DDD)xxxx-xxxx" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{4})-([0-9]{4})"  title="O número de telefone precisa estar neste formato (DDD)xxxx-xxxx"  maxlength="14"  required>
-                                    </div>
+                                <p class="topicos">Item: <?php echo $linha['nomeItem']; ?></p>
+           
                                     
                                 
 
