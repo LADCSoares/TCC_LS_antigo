@@ -26,6 +26,9 @@
           font-size: 16px;
           margin-left: 46px;
         }
+        .aviso{
+          font-family: "Roboto", sans-serif;
+        }
         .topo2{
           background-color: rgb(8,83,148);
       }
@@ -84,9 +87,9 @@
         
           echo "<tr>";
           echo "<td>" . $id. "</td>";
-          echo "<td>" . $nome . "</td>";
+          echo "<td class='ltabela'>" . $nome . "</td>";
           echo "<td>" . $cpf . "</td>";
-          echo "<td>" . $cargo . "</td>";
+          echo "<td class='ltabela'>" . $cargo . "</td>";
           echo "<td>" . $telefone . "</td>";
         
           echo "<td>  <a href= 'formAtualFun.php?idFuncionario=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
@@ -110,7 +113,7 @@
       <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
   
       <!-- Modal Structure -->
-      <div id="modal1" class="modal">
+      <div id="modal1" class="modal aviso">
         <div class="modal-content">
           <h4>Excluir funcionário</h4>
           <p>Tem certeza que deseja excluir o funcionário?</p>
