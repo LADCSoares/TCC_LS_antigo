@@ -25,6 +25,8 @@
 		font-size: 17px;
 		margin-left: 46px;
 		font-weight: 800;
+	}.descricao{
+		word-wrap: break-word;
 	}
 	.topicos2{
 		font-family: "Roboto", sans-serif;
@@ -66,7 +68,7 @@
 
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
-						<i class="material-icons prefix "></i>
+						<i class="material-icons prefix descricao "></i>
 						<label for="descrição"></label>
 						<input type="text" name="descricao" required>
 					</div>
