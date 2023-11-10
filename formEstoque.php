@@ -31,7 +31,7 @@
                 .topicos{
                     font-family: "Roboto", sans-serif;
                     text-transform: capitalize;
-                    font-weight: 800;
+                    font-weight: 600;
                     font-size: 22px;
                 }
                 </style>
@@ -89,6 +89,7 @@
                             <form method="POST" action="cadEntrada.php">
 
                                 <p class="topicos">Item: <?php echo $linha['nomeItem']; ?></p>
+                                <p class="topicos">Quantidade em Estoque: <?php echo $linha['quantidade']; ?></p>
            
                                     
                                 
