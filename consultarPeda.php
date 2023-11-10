@@ -25,6 +25,12 @@
           font-size: 16px;
           margin-left: 46px;
         }
+        .aviso{
+          font-family: "Roboto", sans-serif;
+        }
+        .ltabela{
+          text-transform: capitalize;
+        }
         .topo2{
           background-color: rgb(8,83,148);
       }
@@ -83,7 +89,7 @@
         
           echo "<tr>";
           echo "<td>" . $id . "</td>";
-          echo "<td>" . $nomeItem . "</td>";
+          echo "<td class='ltabela'>" . $nomeItem . "</td>";
           echo "<td>" . $descricao . "</td>";
         
           echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>add</i></a> </td>";
@@ -109,7 +115,7 @@
       <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
   
       <!-- Modal Structure -->
-      <div id="modal1" class="modal">
+      <div id="modal1" class="modal aviso">
         <div class="modal-content">
           <h4>Excluir Item</h4>
           <p>Tem certeza que deseja excluir o Item?</p>
