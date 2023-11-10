@@ -27,7 +27,7 @@
 		font-family: "Roboto", sans-serif;
 		font-size: 17px;
 		margin-left: 46px;
-		font-weight: 500;
+		font-weight: 800;
 	}
 	.topicos2{
 		font-family: "Roboto", sans-serif;
