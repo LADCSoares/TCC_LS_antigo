@@ -34,6 +34,11 @@
         .borda{
           border-radius: 3%;
          }
+
+         .quebra {
+              word-wrap: break-word;
+              white-space: pre-line;
+          }
 	       </style>
   </head>
   
@@ -51,8 +56,9 @@
         <h3 class="borda center-align white-text"> Almoxarifado Geral </h3>
       </div>
    <br><br><br><br><br><br>
-    
-    <table class="bordered highlight striped responsive-table topicos">
+    <div class="row">
+    <div class="col s5 offset-s0">
+    <table class=" bordered highlight striped responsive-table topicos">
             <thead class="">
               <tr>
                   <th>ID</th>
@@ -87,8 +93,7 @@
           echo "<tr>";
           echo "<td>" . $id . "</td>";
           echo "<td class='ltabela'>" . $nomeItem . "</td>";
-          echo "<td>" . $descricao . "</td>";
-        
+          echo "<td class=' col s3 offset-3 quebra'>" . $descricao . "</td>";
           echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>add</i></a> </td>";
           echo "<td>  <a href= 'formAtualItem.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
           echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light light-blue darken-4 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
@@ -101,6 +106,8 @@
         
         </tbody>
         </table>
+      </div>
+      </div>
         <br>
 
         </main>
