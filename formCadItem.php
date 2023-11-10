@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
         <!--Import Google Icon Font-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto|Rowdies">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
@@ -24,7 +24,7 @@
 		font-family: "Roboto", sans-serif;
 		font-size: 17px;
 		margin-left: 46px;
-		font-weight: 500;
+		font-weight: 800;
 	}
 	.topicos2{
 		font-family: "Roboto", sans-serif;
