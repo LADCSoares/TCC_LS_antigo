@@ -34,6 +34,12 @@
                     font-weight: 600;
                     font-size: 22px;
                 }
+                input[type=text] {
+                 width: 100%;
+                 padding: 12px 20px;
+                 margin: 8px 0;
+                 box-sizing: border-box;
+                }
                 </style>
 
             </head>
@@ -65,7 +71,7 @@
                 <!-- Programação do cabeçalho -->
 
         <div class="row">
-            <div class="margem center-alling col s11 offset-s1">
+            <div class="center-alling col s10 offset-s2">
             <ul id="tabs-swipe-demo" class="tabs">
             <li class="tab col s6 "><a class=" black-text cont4 " href="#entrada">Entrada</a></li>
             <li class="tab col s6"><a class="black-text cont4 " href="#retirada">Retirada</a></li>
@@ -79,6 +85,53 @@
                     <div class="row">
                     <div class="container z-depth-3 col s7 offset-s3 cont1">
                     <h4 class="center-align white-text"> ENTRADA </h4>
+                    </div>
+                    
+                    <div class="col s9 offset-s2">
+
+                        <div class="container ">
+                        <br>
+                        <div class="col s10 offset-s1">
+                            <form method="POST" action="cadEntrada.php">
+
+                                <p class="topicos">Item: <?php echo $linha['nomeItem']; ?></p>
+                                <p class="topicos">Quantidade em Estoque: <?php echo $linha['quantidade']; ?></p>
+
+                                <p class="topicos">Nome do Item:</p>
+					                <div class="input-field">
+					                	<label for="name">Nome do Item</label>
+					                	<input type="text" name="nomeItem" required>
+					                </div>
+                                    
+                                
+
+                                
+                            
+
+
+
+                        </div>
+                        <br>
+                                <p class="right-align">
+                                    <button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i> Cadastrar </button>
+                                </p>
+
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+
+
+                <!-- Programação da parte da Saída -->
+
+
+            <div id="retirada" class="col s12">
+                    <br><br><br>
+                    <div class="row">
+                    <div class="container z-depth-3 col s7 offset-s3 cont1">
+                    <h4 class="center-align white-text"> RETIRADA </h4>
                     </div>
                     
                     <div class="col s9 offset-s2">
@@ -109,73 +162,6 @@
                         </div>
                     </div>
                 </div>
-                    </div>
-
-
-
-                <!-- Programação da parte da Saída -->
-
-
-            <div id="retirada" class="col s12"><div class="row">
-                    <br><br><br><br><br><br><br><br><br>
-                    <div class="container z-depth-3 col s6 offset-s4 cont1">
-                    <h4 class="center-align white-text"> CADASTRAR FUNCIONÁRIO </h4>
-                    </div>
-                    
-                    <div class="col s8 offset-s3">
-
-                        <div class="container ">
-                        <br>
-                        <div class="col s10 offset-s1">
-                            <form method="POST" action="cadFuncionario.php">
-
-                                <p class="topicos">Nome:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="name"> </label>
-                                    <input type="text" name="nome" required>
-                                </div>
-
-                                <p class="topicos">CPF:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="cpf"></label>
-                                    <input type="text"  name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"  title="O CPF precisa estar neste formato xxx.xxx.xxx-xx"  maxlength="14"  required>
-                                </div>	
-
-                                <!-- oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" -->
-                                
-                                <p class="topicos">Cargo:</p>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"></i>
-                                    <label for="cargo"></label>
-                                    <input type="text" name="cargo" required>
-                                </div>
-
-                                <p class="topicos">Telefone:</p>
-                                <div class="input-field">
-                            
-                                    <i class="material-icons prefix "></i>
-                                    <label for="telefone:"></label>
-                                    <input type="tel"  name="telefone" id="telefone"  placeholder="(DDD)xxxx-xxxx" pattern="(\([0-9]{2}\))([9]{1})?([0-9]{4})-([0-9]{4})"  title="O número de telefone precisa estar neste formato (DDD)xxxx-xxxx"  maxlength="14"  required>
-                                    </div>
-                                    
-                                
-
-                                
-                            
-
-
-
-                        </div>
-                        <br>
-                                <p class="right-align">
-                                    <button class="waves-effect waves-light btn yellow black-text topicos2" type="submit"><i class="material-icons left">add</i> Cadastrar </button>
-                                </p>
-
-                        </form>
-                        </div>
-                    </div>
         </div>
         </div>
             </div>
