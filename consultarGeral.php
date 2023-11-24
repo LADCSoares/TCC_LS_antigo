@@ -5,8 +5,6 @@
       <!--Import Google Icon Font-->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto+Slab">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
       <link rel="stylesheet" href="css/estilo.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       <!--Let browser know website is optimized for mobile-->
@@ -55,9 +53,8 @@
       <div class="cont1 col s5 offset-s0">
         <h3 class="borda center-align white-text"> Almoxarifado Geral </h3>
       </div>
-   <br><br><br><br><br><br>
-    <div class="row">
-    <div class="col s5 offset-s0">
+    <br><br><br><br><br><br>
+
     <table class=" bordered highlight striped responsive-table topicos">
             <thead class="">
               <tr>
@@ -93,7 +90,7 @@
           echo "<tr>";
           echo "<td>" . $id . "</td>";
           echo "<td class='ltabela'>" . $nomeItem . "</td>";
-          echo "<td class=' col s3 offset-3 quebra'>" . $descricao . "</td>";
+          echo "<td class='text-justify'>" . $descricao . "</td>";
           echo "<td>  <a href= 'formEstoque.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>add</i></a> </td>";
           echo "<td>  <a href= 'formAtualItem.php?idItem=$id' class='btn-floating waves-effect waves-light light-blue darken-4 '> <i class='material-icons'>mode_edit</i></a> </td>";
           echo "<td> <a href='#modal1' onclick='preencheId($id)' class='btn-floating waves-effect waves-light light-blue darken-4 modal-trigger'> <i class='material-icons'>delete</i></a> </td>";
