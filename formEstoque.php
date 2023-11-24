@@ -5,8 +5,6 @@
                     <!--Import Google Icon Font-->
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto|Rowdies">
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                    <!--Import materialize.css-->
-                    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
                     <link rel="stylesheet" href="css/estilo.css">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
                     <!--Let browser know website is optimized for mobile-->
@@ -97,19 +95,13 @@
                                 <p class="topicos">Item: <?php echo $linha['nomeItem']; ?></p>
                                 <p class="topicos">Quantidade em Estoque: <?php echo $linha['quantidade']; ?></p>
 
-                                <p class="topicos">Nome do Item:</p>
 					                <div class="input-field">
-					                	<label for="name">Nome do Item</label>
-					                	<input type="text" name="nomeItem" required>
+					                	<label for="name">Quantidade de Entrada:</label>
+					                	<input type="number" name="movimento" required>
 					                </div>
-                                    
-                                
+            
 
-                                
-                            
-
-
-
+ 
                         </div>
                         <br>
                                 <p class="right-align">
@@ -144,14 +136,18 @@
                                 <p class="topicos">Item: <?php echo $linha['nomeItem']; ?></p>
                                 <p class="topicos">Quantidade em Estoque: <?php echo $linha['quantidade']; ?></p>
            
+                                <div class="input-field">
+					                	<label for="name">Quantidade de Retirada:</label>
+					                	<input type="number" name="movimento" required>
+					                </div>
                                     
+                                    <div class="input-field">
+					                	<label for="name">Finalidade da Retirada:</label>
+					                	<input type="text" name="finalidadeRetirada" required>
+					                </div>
                                 
 
                                 
-                            
-
-
-
                         </div>
                         <br>
                                 <p class="right-align">
