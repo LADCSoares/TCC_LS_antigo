@@ -1,35 +1,26 @@
 <?php
-
 if(isset($_POST['login'])){
 
-    include_once('conecta.php');
+include_once('conecta.php');
 
-    $escola = $_POST['escola'];
-    $senha = $_POST['senha'];
+$usuario = $_POST['usuario'];
+$senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM usuario WHERE login='$escola'";
-    $resultado = mysqli_query($conexao, $sql);  
+$sql = "SELECT * FROM usuario WHERE login='$usuario'";
+$resultado = mysqli_query($conexao, $sql);  
 
-    if(mysqli_num_rows($resultado) > 0){
-        $dados = mysqli_fetch_assoc($resultado);
-        if(password_verify($senha,$dados['senha'])){
-           
-            session_start();
-            $_SESSION["idusuario"] = $dados['idUsuario'];
-            $_SESSION["usuario"] = $dados['login'];
-          
-
-            if($senha == $dados['senha']){
-                header("location:topo.html");
-            } else {
-                header("location:login.php");
-            }
-            
+if(mysqli_num_rows($resultado) > 0){
+    $dados = mysqli_fetch_assoc($resultado);
+    // if(password_verify($senha,$dados['senha'])){
+    if($senha == $dados['senha']){
+            header("location:consultarFun.php");
+        } else {
+            header("location:login.php");
         }
-    } 
-}
+        
+    }
+} 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="PT-br">
@@ -75,7 +66,7 @@ if(isset($_POST['login'])){
 
 	            }
      </style>   
-</head>
+ </head>
 <body>
   <div class="row">
     <br><br>
@@ -92,9 +83,8 @@ if(isset($_POST['login'])){
 					<div class="input-field">
 						<i class="material-icons prefix"></i>
 						<label for="name"> </label>
-						<input type="text" name="escola" required>
+						<input type="text" name="usuario" required>
 					</div>
-					
 					<p class="topicos">Senha:</p>
           			<div class="input-field">
 						<i class="material-icons prefix"></i>
@@ -105,7 +95,7 @@ if(isset($_POST['login'])){
 
           <br><br>
 			  		<p class="center-align">
-						<button class="waves-effect waves-light btn contorno3 white-text topicos  " type="submit" name="login"><i class="material-icons left"></i> Logar </button>
+						<button class="waves-effect waves-light btn blue black-text topicos2" type="submit" name="login"> Logar </button>
 					</p>
           <br>
 			  </form>
@@ -122,4 +112,4 @@ if(isset($_POST['login'])){
 
         </script>
 </body>
-</html>
+</html> 
