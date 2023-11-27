@@ -5,8 +5,6 @@
         <!--Import Google Icon Font-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto|Rowdies">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
         <link rel="stylesheet" href="css/estilo.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <!--Let browser know website is optimized for mobile-->
@@ -69,8 +67,9 @@
 					<p class="topicos">Descrição:</p>
 					<div class="input-field">
 						<i class="material-icons prefix descricao "></i>
-						<label for="descrição"></label>
-						<input type="text" name="descricao" required>
+						<textarea id="descricao" name="descricao" required class="materialize-textarea "></textarea>
+						<label for="descricao"></label>
+						<!-- <input type="text" name="descricao" required> -->
 					</div>
 					
 					<p class="topicos">Almoxarifado de Destino do Item:</p>
