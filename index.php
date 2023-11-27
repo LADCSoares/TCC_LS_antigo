@@ -1,115 +1,218 @@
 <?php
+
 if(isset($_POST['login'])){
 
-include_once('conecta.php');
+    include_once('conecta.php');
 
-$usuario = $_POST['usuario'];
-$senha = $_POST['senha'];
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
 
-$sql = "SELECT * FROM usuario WHERE login='$usuario'";
-$resultado = mysqli_query($conexao, $sql);  
+    $sql = "SELECT * FROM usuario WHERE email='$usuario'";
+    $resultado = mysqli_query($conexao, $sql);  
 
-if(mysqli_num_rows($resultado) > 0){
-    $dados = mysqli_fetch_assoc($resultado);
-    // if(password_verify($senha,$dados['senha'])){
-    if($senha == $dados['senha']){
-            header("location:paginaInicial.php");
-        } else {
-            header("location:index.php");
+    if(mysqli_num_rows($resultado) > 0){
+        $dados = mysqli_fetch_assoc($resultado);
+        // if(password_verify($senha,$dados['senha'])){
+        if($senha == $dados['senha']){
+           
+            session_start();
+            $_SESSION["id"] = $dados['id'];
+            $_SESSION["usuario"] = $dados['email'];
+            $_SESSION["privilegio"] = $dados['privilegio'];
+
+            if($dados['privilegio'] == 1){
+                header("location:inicioAdm.php");
+            } else {
+                header("location:inicioUsu.php");
+            }
+            
         }
-        
-    }
-} 
+    } 
+}
 ?>
-
 <!DOCTYPE html>
-<html lang="PT-br">
-  <head>
-      <meta charset="UTF-8">
-    <!--Import Google Icon Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto+Slab">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--Let browser know website is optimized for mobile-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>SCAEM</title>
-    <style>
-              body{
-                background-color: rgb(8,83,148);
-             }
-             .contorno{
-              background-color:#b71c1c;
-              }
-              .contorno2{
-              background-color:#ffffff;
-              }
-              .contorno3{
-                background-color: rgb(8,83,148);
-              }
-              .imagem2{
-                height:200px;
-                float: center;
-              }
-              .topicos{
-		            font-family: "Roboto", sans-serif;
-		            font-size: 17px;
-		            font-weight: 800;
-                margin-left: 43px;;
-	            }
-              .topico5{
-		            font-family: "Roboto", sans-serif;
-		            font-size: 17px;
-		            font-weight: 800;
+<html lang="pt-br">
+<head>
 
-	            }
-     </style>   
- </head>
-<body>
-  <div class="row">
-    <br><br>
-    <div class="container col s6 offset-s3 center-align contorno">
-      <br><br>
-    <div class="container col s10 offset-s1 center-align contorno2">
-      <br><br>
-    <img class=" imagem2 " src="municipio.png">
-    <br><br>
-    <div class="col s10 offset-s1 left-align">
-    <form method="post">
+        <meta charset="UTF-8">
 
-          <p class="topicos ">Nome da Escola:</p>
-					<div class="input-field">
-						<i class="material-icons prefix"></i>
-						<label for="name"> </label>
-						<input type="text" name="usuario" required>
-					</div>
-					<p class="topicos">Senha:</p>
-          			<div class="input-field">
-						<i class="material-icons prefix"></i>
-						<label for="cargo"></label>
-						<input type="password" name="senha" required>
-					</div>
-          <a class="center-aling" href="index.php"><span class=" topicos5">Esqueci Minha Senha</span></a>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-          <br><br>
-			  		<p class="center-align">
-						<button class="waves-effect waves-light btn blue black-text topicos2" type="submit" name="login"> Logar </button>
-					</p>
-          <br>
-			  </form>
-    </div>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
-  </div>
-    
+        <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-              
-        <script>
+        <link rel="stylesheet" href="style.css">
+       
 
-        </script>
-</body>
-</html> 
+        <title>Login</title>
+        <style>
+            body {
+
+            background-image: url(imagens/exemplo3.png);
+
+            }
+
+            #login {
+
+            display: flex; /*     centraliza no meio da página        */
+
+            align-items: center; /* centralizar itens */ 
+
+            justify-content: center;  /* coloca bem ao meio */
+
+            height: 92vh;;  
+
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+            }
+
+            .formulario {
+            
+            background-color: rgba(19, 19, 19, 0.3); /* cor de fundo do formulario de login */
+            
+            padding: 40px; /* tamanho das bordas */
+            
+            border-radius: 2px;
+            
+            width:280px; /* largura do fundo */
+            
+            }
+
+            .titleLogin {
+            
+            
+            padding-bottom: 50px;
+            
+            opacity: 0.8;
+            
+            color: #fff; /* cor do titulo de login */
+            
+            }
+
+            .conteudoUsuario {
+            
+            color : #fff; /* cor de email e senha */
+            
+            opacity: 0.8;  /* opacidade da cor do email e senha */
+            
+            }
+
+            .card-content-area {
+            
+            display: flex; /* joga as linhas para baixo além de distanciar o "login" e o esqueci minha senha */
+            
+            flex-direction: column;
+            
+            padding:15px 0; /* distancia das escritas */
+            
+            }
+
+            .card-content-area input {
+            
+            margin-top: 10px;
+            
+            padding:0 5px;
+            
+            background-color: transparent;  /* em vez de ser colunas deixa como linhas */
+            
+            border:none; /* deixa sem bordas na parte de inserir seus dados */
+            
+            border-bottom: 1px solid #e1e1e1; /* mostra as linhas tamanho e suas cores */
+            
+            outline: none;
+            
+            color: #fff;
+            
+            
+            }
+
+            .card-footer {
+            
+            display: flex; /* centraliza o esqueci minha senha */
+            
+            flex-direction: column;
+            
+            }
+
+            .card-footer .submit{
+            
+            width: 100%; /* tamanho do botão de login */
+            
+            height: 40px; /* comprimento do botão */
+            
+            background-color: rgb(124, 57, 57); /* cor do botão do login */
+            
+            border:none; /* deixa o botão sem bordas */
+            
+            color:#e1e1e1; /* cor da letra do login */
+            
+            margin: 10px 0;
+            
+            }
+
+            .card-footer a {
+            
+            text-align: center;
+            
+            font-size: 12px; 
+            
+            opacity: 0.8;
+            
+            color: #fff;
+            
+            
+            
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <br> <br> <br>
+        <div id="login">
+
+            <form method="POST" class="formulario">
+
+                <div class="titleLogin">
+
+                    <h2>Login</h2>
+
+                </div>
+
+                <div class="conteudoUsuario">
+
+                    <div class="card-content-area">
+
+                        <label for="usuario">Usuário</label>
+
+                        <input type="usuario" name="usuario" class="validate" id="usuario" autocomplete="off">
+
+                    </div>
+
+                    <div class="card-content-area">
+
+                        <label for="password">Senha</label>
+
+                        <input type="password" name="senha" id="password" autocomplete="off">
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <input type="submit" name="login" value="login" class="submit">
+
+                    <a href="recuperar-senha.php" class="recuperar_senha">Esqueci minha senha</a>
+                  
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
