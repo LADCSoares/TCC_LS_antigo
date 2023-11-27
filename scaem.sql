@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Nov-2023 às 15:42
--- Versão do servidor: 8.0.31
--- versão do PHP: 8.2.0
+-- Host: 127.0.0.1
+-- Tempo de geração: 22-Out-2023 às 20:17
+-- Versão do servidor: 10.4.19-MariaDB
+-- versão do PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   PRIMARY KEY (`idEstoque`),
   KEY `IdFuncionario` (`IdFuncionario`),
   KEY `idItem` (`idItem`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -51,11 +51,11 @@ DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
   `idFuncionario` int NOT NULL AUTO_INCREMENT,
   `nome` text NOT NULL,
-  `cpf` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `cpf` varchar(14) CHARACTER SET utf8mb4 NOT NULL,
   `cargo` varchar(300) NOT NULL,
-  `telefone` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `telefone` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
   PRIMARY KEY (`idFuncionario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -73,12 +73,12 @@ INSERT INTO `funcionario` (`idFuncionario`, `nome`, `cpf`, `cargo`, `telefone`) 
 DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `idItem` int NOT NULL AUTO_INCREMENT,
-  `nomeItem` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nomeItem` text CHARACTER SET utf8mb4 NOT NULL,
   `descricao` text NOT NULL,
   `almoxarifado` varchar(1) NOT NULL,
   `quantidade` int NOT NULL,
   PRIMARY KEY (`idItem`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `item`
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Restrições para despejos de tabelas
